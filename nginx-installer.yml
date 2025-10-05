@@ -1,0 +1,12 @@
+---
+- name: Install nginx on Ubuntu/Debian
+  hosts: all
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Ensure nginx is installed
+      ansible.builtin.apt:
+        name:  nginx-core
+        state: present
+        update_cache: yes
