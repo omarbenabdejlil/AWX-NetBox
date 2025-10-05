@@ -1,0 +1,11 @@
+---
+- name: 'hosts'
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: 'Create new user'
+      user:
+        name: 'sameh'
+        uid: 1040
+        group: sudo
